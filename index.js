@@ -11,3 +11,20 @@
 // db.sync()
 // .then start the and connect to the PORT
 // .catch an error if there's some kind of error initializing the db
+
+const server = require('./src/server');
+
+const { db } = require('./src/models');
+
+db.sync()
+  .then(() =>
+  {
+
+  })
+  .catch(err()=>
+    {
+      console.log(err.message);
+    })
+
+// before starting the server, make sure the database is set up
+server.start();
